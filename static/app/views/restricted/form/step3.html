@@ -1,0 +1,75 @@
+<div class="col-lg-offset-2 col-lg-8">
+	<div class="form-group" ng-class="{'has-error' : (verify && !(formData.help.financial === true || formData.help.financial === false))}" verify="verify" ng-init="formData.steps.currentStep = 3">
+		<div>
+			<h4 class="text-center">{{'step3.header1' | translate}}</h4>
+			<h4 class="text-center">{{'step3.header2' | translate}}</h4>
+		</div>
+		<label class="control-label" for="financial">{{'step3.financial' | translate}}</label>
+		<div>
+			<div class="radio">
+				<label>
+					<input ng-model="formData.help.financial" id="financial" type="radio" name="financial" ng-value="true">
+					{{'steps.yes' | translate}}
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input ng-model="formData.help.financial" type="radio" name="financial" ng-value="false">
+					{{'steps.no' | translate}}
+				</label>
+			</div>
+		</div>
+	</div>
+	<div ng-show="formData.help.financial === true">
+		<div class="form-group" ng-class="{'has-error' : (verify && formData.help.financial === true && !(formData.help.travel === true) && !(formData.help.hotel === true))}" verify="verify">
+			<label class="control-label" for="travel">{{'step3.labelTravel' | translate}}</label>
+			<div>
+				<div class="checkbox">
+					<label>
+						<input ng-model="formData.help.travel" id="travel" name="travel" type="checkbox">
+						{{'step3.travel' | translate}}
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group" bs-has verify="verify" ng-show="formData.help.travel">
+			<label class="control-label" for="travelFrom">{{'step3.place' | translate}}</label>
+			<div>
+				<input required type="text" name="travelFrom" ng-model="formData.help.travelFrom" class="form-control" id="travelFrom">
+			</div>
+		</div>
+		<div class="form-group" ng-class="{'has-error' : (verify && formData.help.financial === true && !(formData.help.travel === true) && !(formData.help.hotel === true))}" verify="verify">
+			<label class="control-label" for="hotel">{{'step3.labelHotel' | translate}}</label>
+			<div>
+				<div class="checkbox">
+					<label>
+						<input ng-model="formData.help.hotel" id="hotel" name="hotel" type="checkbox" value="">
+						{{'step3.hotel' | translate}}
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group" bs-has verify="verify" ng-show="formData.help.hotel">
+			<label class="control-label" for="hotelDate">{{'step3.date' | translate}}</label>
+			<div>
+				<input required type="text" name="hotelDate" ng-model="formData.help.hotelDate" class="form-control" id="hotelDate">
+			</div>
+		</div>
+	</div>
+	<p ng-show="sendError" class="col-sm-12 bg-danger alert">{{'step3.sendError' | translate}}</p>
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-6 pull-left" style="padding-bottom: 10px">
+		<a ui-sref="app.form.step2" class="btn btn-block btn-warning">
+			<span class="mdi-navigation-arrow-back pull-left"></span> {{'steps.previous' | translate}}
+		</a>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-6 pull-right" style="padding-bottom: 10px">
+		<a ng-click="doVerify()" class="btn btn-block btn-success" ng-disabled="formData.sending">
+		{{'steps.validate' | translate}} <span class="mdi-navigation-check pull-right" ng-class="{'glyphicon-refresh-animate' : formData.sending, 'mdi-navigation-check' : !formData.sending, 'mdi-navigation-refresh' : formData.sending}"></span>
+		</a>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-6 pull-right">
+        <a ng-disabled="formData.sending" ng-click="processSaveForm()" class="btn btn-block btn-info">
+            {{'steps.saveAsDraft' | translate}} <span class="hidden-xs mdi-content-save pull-right" ng-class="{'glyphicon-refresh-animate' : formData.sending, 'mdi-content-save' : !formData.sending, 'mdi-navigation-refresh' : formData.sending}"></span>
+        </a>
+    </div>
+</div>

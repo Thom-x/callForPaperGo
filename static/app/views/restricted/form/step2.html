@@ -1,0 +1,74 @@
+<div class="col-lg-offset-2 col-lg-8">
+	<div class="form-group" bs-has verify="verify">
+		<label class="control-label" for="track">{{'step2.type' | translate}}</label>
+		<div>{{'step2.hintType' | translate}}</div>
+		<div>
+			<select ng-model="formData.session.type" id="type" name="type" required class="form-control">
+				<option value="conference">{{'step2.types.conference' | translate}}</option>
+				<option value="codelab">{{'step2.types.codelab' | translate}}</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group" bs-has verify="verify" ng-init="formData.steps.currentStep = 2">
+		<label class="control-label" for="sessionName">{{'step2.name' | translate}}</label>
+		<div>
+			<input required type="text" name="sessionName" class="form-control" ng-model="formData.session.sessionName" id="sessionName">
+		</div>
+	</div>
+	<div class="form-group" bs-has verify="verify">
+		<label class="control-label" for="description">{{'step2.description' | translate}}</label>
+		<div>{{'step2.hintDescription' | translate}}</div>
+		<div>
+			<textarea required name="description" class="form-control" ng-model="formData.session.description" id="description" rows="3"></textarea>
+		</div>
+	</div>
+	<div class="form-group" bs-has verify="verify">
+		<label class="control-label" for="references">{{'step2.references' | translate}}</label>
+		<div>{{'step2.hintReferences' | translate}}</div>
+		<div>
+			<textarea class="form-control" name="references" id="references" ng-model="formData.session.references"  rows="3"></textarea>
+		</div>
+	</div>
+	<div class="form-group" bs-has verify="verify">
+		<label class="control-label" for="difficulty">{{'step2.difficulty' | translate}}</label>
+		<div>
+			<span required rating ng-model="formData.session.difficulty" id="difficulty" name="difficulty" max="3" readonly="false" on-hover="hoverDifficulty(value)" on-leave="overStar = null"></span>
+			<label>{{formData.session.difficultyLabel}}</label>
+		</div>
+	</div>
+	<div class="form-group" bs-has verify="verify">
+		<label class="control-label" for="track">{{'step2.track' | translate}}</label>
+		<div>{{'step2.hintTrack' | translate}}</div>
+		<div>
+			<select ng-model="formData.session.track" id="track" name="track" required class="form-control">
+				<option value="cloud">{{'step2.tracks.cloud' | translate}}</option>
+				<option value="mobile">{{'step2.tracks.mobile' | translate}}</option>
+				<option value="web">{{'step2.tracks.web' | translate}}</option>
+				<option value="discovery">{{'step2.tracks.discovery' | translate}}</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group" bs-has verify="verify">
+		<label class="control-label" for="coSpeaker">{{'step2.cospeaker' | translate}}</label>
+		<div>{{'step2.hintCospeaker' | translate}}</div>
+		<div>
+			<textarea class="form-control" name="coSpeaker" id="coSpeaker" ng-model="formData.session.coSpeaker"  rows="3"></textarea>
+		</div>
+	</div>
+	<p ng-show="sendError" class="col-sm-12 bg-danger alert">{{'step3.sendError' | translate}}</p>
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-6 pull-left" style="padding-bottom: 10px">
+		<a ui-sref="app.form" class="btn btn-block btn-warning">
+			<span class="mdi-navigation-arrow-back pull-left"></span> {{'steps.previous' | translate}}
+		</a>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-6 pull-right" style="padding-bottom: 10px">
+		<a ng-click="doVerify()" class="btn btn-block btn-primary">
+			{{'steps.next' | translate}} <span class="mdi-navigation-arrow-forward pull-right"></span>
+		</a>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-6 pull-right">
+		<a ng-disabled="formData.sending" ng-click="processSaveForm()" class="btn btn-block btn-info">
+			{{'steps.saveAsDraft' | translate}} <span class="hidden-xs mdi-content-save pull-right" ng-class="{'glyphicon-refresh-animate' : formData.sending, 'mdi-content-save' : !formData.sending, 'mdi-navigation-refresh' : formData.sending}"></span>
+		</a>
+	</div>
+</div>

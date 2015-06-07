@@ -1,0 +1,132 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Call For Paper</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#3f51b5">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="icon" href="favicon.ico" />
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/roboto.css">
+    <link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.css">
+    <link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.bootstrap.css">
+    <link rel="stylesheet" href="bower_components/intl-tel-input/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.css">
+    <link rel="stylesheet" href="bower_components/angular-ui-notification/dist/angular-ui-notification.min.css">
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/custom-material.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="CallForPaper">
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- build:js scripts/ie.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+    <div id="views" ui-view=""></div>
+    <!-- build:js scripts/vendor.js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+    <script src="bower_components/arrive/src/arrive.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/modules.js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/ng-table/dist/ng-table.js" type="text/javascript"></script>
+    <script src="bower_components/intl-tel-input/build/js/intlTelInput.js" type="text/javascript"></script>
+    <script src="bower_components/angular-ui-notification/dist/angular-ui-notification.min.js" type="text/javascript"></script>
+    <script src="bower_components/angular-resource/angular-resource.js" type="text/javascript"></script>
+    <script src="bower_components/angular-animate/angular-animate.js" type="text/javascript"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js" type="text/javascript"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js" type="text/javascript"></script>
+    <script src="bower_components/angular-translate/angular-translate.js" type="text/javascript"></script>
+    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js" type="text/javascript"></script>
+    <script src="bower_components/angular-language-picker/dist/angular-language-picker.js" type="text/javascript"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js" type="text/javascript"></script>
+    <script src="bower_components/angular-gravatar/build/angular-gravatar.min.js" type="text/javascript"></script>
+    <script src="bower_components/angular-relative-date/angular-relative-date.js" type="text/javascript"></script>
+    <script src="bower_components/angular-media-queries/match-media.js" type="text/javascript"></script>
+    <script src="bower_components/angular-jwt/dist/angular-jwt.js" type="text/javascript"></script>
+    <script src="bower_components/angular-recaptcha/release/angular-recaptcha.js" type="text/javascript"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js" type="text/javascript"></script>
+    <script src="bower_components/gsap/src/uncompressed/TweenMax.js" type="text/javascript"></script>
+    <script src="bower_components/ngFx/dist/ngFx.js" type="text/javascript"></script>
+    <script src="bower_components/angular-off-click/offClick.js" type="text/javascript"></script>
+    <script src="bower_components/angular-konami/angular-konami.js" type="text/javascript"></script>
+    <!-- endbuild -->
+    <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/modules/resourceRetries.js" type="text/javascript"></script>
+    <script src="scripts/modules/satellizer.js" type="text/javascript"></script>
+    <script src="scripts/directives/angular-gcm.js" type="text/javascript"></script>
+    <script src="scripts/directives/tags-input.js" type="text/javascript"></script>
+    <script src="scripts/directives/angular-language-picker.templates.js" type="text/javascript"></script>
+    <script src="scripts/app.js" type="text/javascript"></script>
+    
+    <!-- Controller -->
+    <script src="scripts/controllers/admin/admin.js" type="text/javascript"></script>
+    <script src="scripts/controllers/admin/sessions.js" type="text/javascript"></script>
+    <script src="scripts/controllers/admin/session.js" type="text/javascript"></script>
+    <script src="scripts/controllers/admin/login.js" type="text/javascript"></script>
+    <script src="scripts/controllers/admin/logout.js" type="text/javascript"></script>
+    <script src="scripts/controllers/login.js" type="text/javascript"></script>
+    <script src="scripts/controllers/logout.js" type="text/javascript"></script>
+    <script src="scripts/controllers/signup.js" type="text/javascript"></script>
+    <script src="scripts/controllers/verify.js" type="text/javascript"></script>
+    <script src="scripts/controllers/header.js" type="text/javascript"></script>
+    <script src="scripts/controllers/restricted/dashboard.js" type="text/javascript"></script>
+    <script src="scripts/controllers/restricted/profile.js" type="text/javascript"></script>
+    <script src="scripts/controllers/restricted/form.js" type="text/javascript"></script>
+    <script src="scripts/controllers/restricted/step1.js" type="text/javascript"></script>
+    <script src="scripts/controllers/restricted/step2.js" type="text/javascript"></script>
+    <script src="scripts/controllers/restricted/step3.js" type="text/javascript"></script>
+    <script src="scripts/controllers/restricted/result.js" type="text/javascript"></script>
+    <script src="scripts/controllers/restricted/session.js" type="text/javascript"></script>
+    
+    <!-- Resources -->
+    <script src="scripts/resources/Application.js" type="text/javascript"></script>
+    <script src="scripts/resources/Verify.js" type="text/javascript"></script>
+    <script src="scripts/resources/admin/AdminUser.js" type="text/javascript"></script>
+    <script src="scripts/resources/admin/AdminSession.js" type="text/javascript"></script>
+    <script src="scripts/resources/admin/AdminComment.js" type="text/javascript"></script>
+    <script src="scripts/resources/admin/AdminRate.js" type="text/javascript"></script>
+    <script src="scripts/resources/restricted/RestrictedSession.js" type="text/javascript"></script>
+    <script src="scripts/resources/restricted/RestrictedDraft.js" type="text/javascript"></script>
+    <script src="scripts/resources/restricted/RestrictedUser.js" type="text/javascript"></script>
+    
+    <script src="scripts/filters/filters.js" type="text/javascript"></script>
+    <script src="scripts/translate.js" type="text/javascript"></script>
+    <script src="scripts/directives/international-phone-number.js" type="text/javascript"></script>
+    <script src="scripts/directives/bsProcessValidator.js" type="text/javascript"></script>
+    
+    <script src="scripts/factory/authHttpResponseInterceptor.js" type="text/javascript"></script>
+    <script src="scripts/factory/csrfInterceptor.js" type="text/javascript"></script>
+    <script src="scripts/factory/authService.js" type="text/javascript"></script>
+    <script src="scripts/factory/appConfigService.js" type="text/javascript"></script>
+    <!-- endbuild -->
+</body>
+</html>

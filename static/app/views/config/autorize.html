@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="center-form panel col-md-6 col-md-offset-3">
+		<div class="panel-body">
+			<button class="btn btn-block btn-google-plus" ng-disabled="loading" ng-click="configure('spreadsheet')">
+			<span class="ion-social-googleplus"></span> {{'config.linkMyAccount' | translate}}
+			</button>
+			<br>
+			<div ng-show="success" class="alert alert-success">{{'config.success' | translate}}</div>
+			<div ng-show="error" class="alert alert-danger">{{'config.error' | translate}}</div>
+		</div>
+	</div>
+</div>

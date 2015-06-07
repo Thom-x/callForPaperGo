@@ -1,0 +1,62 @@
+<div id="st-container" class="st-container st-effect-1" ng-class="{'st-menu-open' : menuOpened}">
+
+	<nav class="st-menu st-effect-1" id="menu" ng-click="menuOpened = false" off-click="menuOpened = false" off-click-filter="'#toggle'" off-click-if="menuOpened">
+		<img src="/images/devfest.png" alt="" style="margin-left: 41px;width: 20px;margin-top: -6px;margin-bottom: 15px;">
+		<span style="
+		vertical-align: top;
+		line-height: 23px;
+		margin-left: 15px;
+		">Call For Paper</span>
+		<ul>
+        	<li ui-sref-active="active" ng-show="isAuthenticated === true"><a ui-sref="app.dashboard">{{'header.dashboard' | translate}}</a></li>
+        	<li ui-sref-active="active" ng-show="isAuthenticated === true"><a ui-sref="app.profile">{{'header.profile' | translate}}</a></li>
+            <li ng-show="isAuthenticated === true"><a ui-sref="app.logout">{{'header.logout' | translate}}</a></li>
+			<li ui-sref-active="active" ng-show="isAuthenticated === false"><a ui-sref="app.login">{{'header.login' | translate}}</a></li>
+			<li>
+				<lang-picker class="lang-picker" supported-languages="['fr-FR', 'en-US']" on-language-change="changeLanguage(lang)">{{ ('lang.'+language) | translate}}</lang-picker>
+			</li>
+        </ul>
+	</nav>
+
+	<!-- content push wrapper -->
+	<div class="st-pusher">
+		<div class="st-content"><!-- this is the wrapper for the content -->
+			<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" id="toggle" ng-click="menuOpened = true">
+							<span class="sr-only">{{'admin.toggle' | translate}}</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<div class="navbar-brand">
+								<a ui-sref="app.dashboard">
+									<img src="/images/devfest.png" alt="" style="width: 20px;margin-top: -6px;">
+									<span>Call for paper - {{::title}}</span>
+								</a>
+							</div>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li ui-sref-active="active" ng-show="isAuthenticated === true"><a ui-sref="app.dashboard">{{'header.dashboard' | translate}}</a></li>
+								<li ui-sref-active="active" ng-show="isAuthenticated === true"><a ui-sref="app.profile">{{'header.profile' | translate}}</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li ng-show="isAuthenticated === true"><a ui-sref="app.logout">{{'header.logout' | translate}}</a></li>
+								<li ui-sref-active="active" ng-show="isAuthenticated === false"><a ui-sref="app.login">{{'header.login' | translate}}</a></li>
+								<li>
+									<lang-picker class="lang-picker" supported-languages="['fr-FR', 'en-US']" on-language-change="changeLanguage(lang)">{{ ('lang.'+language) | translate}}</lang-picker>
+								</li>
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+				<div style="position:absolute;width:100%;" class="fx-fade-normal" ui-view></div>
+			</div><!-- /st-content-inner -->
+		</div><!-- /st-content -->
+	</div><!-- /st-pusher -->
+</div><!-- /st-container -->

@@ -1,0 +1,181 @@
+<div class="row">
+	<div class="panel">
+		<div class="panel-body">
+			<h1>{{::session.sessionName}}</h1>
+			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+				<ul id="tab" class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><button href="#speaker" id="speaker-tab" role="tab" data-toggle="tab" aria-controls="speaker" aria-expanded="true">{{'admin.speaker' | translate}}</button></li>
+					<li role="presentation" class=""><button href="#session" role="tab" id="session-tab" data-toggle="tab" aria-controls="session" aria-expanded="false">{{'admin.session' | translate}}</button></li>
+					<li role="presentation" class=""><button href="#help" role="tab" id="help-tab" data-toggle="tab" aria-controls="help" aria-expanded="false">{{'admin.financialHelp' | translate}}</button></li>
+				</ul>
+				<div id="tabContent" class="tab-content tile">
+					<br>
+					<div role="tabpanel" class="tab-pane fade active in" id="speaker" aria-labelledby="speaker-tab">
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<div class="form-group">
+									<label class="control-label" for="email" >{{'step1.email' | translate}}</label>
+									<div class="">
+										<div class="input-group">
+											<input readonly name="email" type="email" class="form-control" id="email" ng-model="session.email">
+											<span class="input-group-addon">@</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="name">{{'step1.name' | translate}}</label>
+									<div class="">
+										<input readonly type="text" name="name" class="form-control" id="name" ng-model="session.name">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="firstname">{{'step1.firstname' | translate}}</label>
+									<div class="">
+										<input readonly type="text" class="form-control" id="firstname" name="firstname" ng-model="session.firstname">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="phone">{{'step1.phone' | translate}}</label>
+									<div class="">
+										<input readonly type="text" class="form-control" id="phone" name="phone" ng-model="session.phone">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="company">{{'step1.company' | translate}}</label>
+									<div class="">
+										<input readonly type="text" class="form-control" name="company" id="company" ng-model="session.company">
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<div class="form-group">
+									<label class="control-label" for="bio">{{'step1.bio' | translate}}</label>
+									<div class="">
+										<textarea readonly class="form-control" name="bio" id="bio" rows="7" ng-model="session.bio"></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="social">{{'step1.social' | translate}}</label>
+									<div class="">
+										<input readonly type="text" class="form-control" name="social" id="social" ng-model="session.social">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="session" aria-labelledby="session-tab">
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<div class="form-group">
+									<label class="control-label" for="type">{{'step2.type' | translate}}</label>
+									<div class="">
+										<input readonly type="text" name="type" class="form-control" ng-value="'step2.types.' + session.type | translate" id="type">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="sessionName">{{'step2.name' | translate}}</label>
+									<div class="">
+										<input readonly type="text" name="sessionName" class="form-control" ng-model="session.sessionName" id="sessionName">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="description">{{'step2.description' | translate}}</label>
+									<div class="">
+										<textarea readonly name="description" class="form-control" ng-model="session.description" id="description" rows="10"></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="references">{{'step2.references' | translate}}</label>
+									<div class="">
+										<textarea readonly class="form-control" name="references" id="references" ng-model="session.references"  rows="5"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<div class="form-group">
+									<label class="control-label" for="difficulty">{{'step2.difficulty' | translate}}</label>
+									<div class="">
+										<input readonly type="text" name="difficulty" class="form-control" ng-value="'step2.' + session.keyDifficulty | translate" id="difficulty">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="track">{{'step2.track' | translate}}</label>
+									<div class="">
+										<input readonly type="text" name="track" class="form-control" ng-value="'step2.tracks.' + session.track | translate" id="track">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="coSpeaker">{{'step2.cospeaker' | translate}}</label>
+									<div class="">
+										<textarea readonly class="form-control" name="coSpeaker" id="coSpeaker" rows="18" ng-model="session.coSpeaker"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="help" aria-labelledby="help-tab">
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<div class="form-group">
+									<label class="control-label" for="financial">{{'step3.financial' | translate}}</label>
+									<div class="">
+										<div class="radio">
+											<label>
+												<input disabled ng-checked="session.financial" id="financial" type="radio" name="financial" value="true">
+												{{'steps.yes' | translate}}
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input disabled ng-checked="session.financial == false" type="radio" name="financial" value="false">
+												{{'steps.no' | translate}}
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<div ng-show="session.financial == true">
+									<div class="form-group">
+										<label class="control-label" for="travel">{{'step3.labelTravel' | translate}}</label>
+										<div class="">
+											<div class="checkbox">
+												<label>
+													<input disabled ng-model="session.travel" id="travel" name="travel" type="checkbox">
+													{{'step3.travel' | translate}}
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group" ng-show="session.travel">
+										<label class="control-label" for="travelFrom">{{'step3.place' | translate}}</label>
+										<div class="">
+											<input readonly type="text" name="travelFrom" ng-model="session.travelFrom" class="form-control" id="travelFrom">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="hotel">{{'step3.labelHotel' | translate}}</label>
+										<div class="">
+											<div class="checkbox">
+												<label>
+													<input disabled ng-model="session.hotel" id="hotel" name="hotel" type="checkbox" value="">
+													{{'step3.hotel' | translate}}
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group" ng-show="session.hotel">
+										<label class="control-label" for="hotelDate">{{'step3.date' | translate}}</label>
+										<div class="">
+											<input readonly type="text" name="hotelDate" ng-model="session.hotelDate" class="form-control" id="hotelDate">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

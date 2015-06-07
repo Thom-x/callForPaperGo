@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="panel">
+        <div class="panel-body">
+            <div id="form-container">
+                <!-- use ng-submit to catch the form submission and use our Angular function -->
+                <form class="form-horizontal" id="form" name="form" xt-form role="form" novalidate>
+                    <!-- our nested state views will be injected here -->
+                    <div class="col-lg-offset-2 col-lg-8">
+                        <div class="form-group" bs-has verify="verify">
+                            <label class="control-label" for="name">{{'step1.name' | translate}}</label>
+                            <div>
+                                <input type="text" name="name" ng-class="{'ng-verify' : verify}" class="form-control" id="name" ng-model="formData.name">
+                            </div>
+                        </div>
+                        <div class="form-group" bs-has verify="verify">
+                            <label class="control-label" for="firstname">{{'step1.firstname' | translate}}</label>
+                            <div>
+                                <input type="text" class="form-control" id="firstname" name="firstname" ng-model="formData.firstname">
+                            </div>
+                        </div>
+                        <div class="form-group" bs-has verify="verify">
+                            <label class="control-label" for="phone">{{'step1.phone' | translate}}</label>
+                            <div>
+                                <input type="tel" class="form-control" name="phone" id="phone" preferred-countries="fr, de, gb, us" international-phone-number ng-model="formData.phone">
+                                <span ng-show="!form.phone.$valid" class="alert">{{'step1.errorPhone' | translate}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group" bs-has verify="verify">
+                            <label class="control-label" for="company">{{'step1.company' | translate}}</label>
+                            <div>
+                                <input type="text" class="form-control" name="company" id="company" ng-model="formData.company">
+                            </div>
+                        </div>
+                        <div class="form-group" bs-has verify="verify">
+                            <label class="control-label" for="bio">{{'step1.bio' | translate}}</label>
+                            <div>
+                                <textarea class="form-control" name="bio" id="bio" ng-model="formData.bio"  rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" bs-has verify="verify">
+                            <label class="control-label" for="social">{{'step1.social' | translate}}</label>
+                            <div>{{'step1.hintSocial' | translate}}</div>
+                            <div>
+                                <tags-input id="social" name="social" ng-model="formData.socialArray"></tags-input>
+                            </div>
+                        </div>
+                        <p ng-show="sendError" class="col-sm-12 bg-danger alert">{{'profile.error' | translate}}</p>
+                        <p ng-show="sendSuccess" class="col-sm-12 bg-success alert">{{'profile.success' | translate}}</p>
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4 pull-right" style="padding-bottom: 10px">
+                            <a ng-click="doVerify()" class="btn btn-block btn-primary">
+                                {{'profile.save' | translate}} <span class="mdi-content-save pull-right" ng-class="{'glyphicon-refresh-animate' : sending, 'mdi-content-save' : !sending, 'mdi-navigation-refresh' : sending}"></span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

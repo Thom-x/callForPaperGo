@@ -1,0 +1,93 @@
+<div class="row" konami-code="launchKonami()">
+  <div class="panel">
+    <div class="panel-body">
+      <div ng-if="isVerified">
+        <div class="row">
+          <div class="col-sm-4 col-lg-3">
+            <a ui-sref="app.form" class="btn btn-block btn-primary">
+              <span>{{'dashboard.createNewSession' | translate}}</span>
+            </a>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <table class="table table-striped table-hover table-framed">
+              <thead>
+                <tr>
+                  <th>{{'dashboard.editionTalks' | translate}}</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="draft in drafts">
+                  <td>
+                    <span>{{'dashboard.draftModifiedAt' | translate}} {{draft.added | date:"dd/MM/yyyy, HH:mm:ss"}}</span>              
+                  </td>
+                  <td>
+                      <a ui-sref='app.form({id: draft.id})'><span class="action glyphicon glyphicon-pencil pull-right white" aria-hidden="true"></span></a>
+                  </td>
+                  <td>
+                      <span ng-click="delete(draft.id)" class="action glyphicon glyphicon-remove pull-right white" aria-hidden="true"></span>
+                  </td>
+                </tr>
+                <tr ng-show="drafts.length === 0 && draftsLoaded">
+                  <td>
+                    <span>{{'dashboard.noEditionTalks' | translate}}</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr ng-show="!draftsLoaded">
+                  <td>
+                    <span class="loading mdi-navigation-refresh glyphicon-refresh-animate" aria-hidden="true"></span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  <th>{{'dashboard.sendedTalks' | translate}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="session in sessions">
+                  <td ui-sref='app.session({id: session.id})'>
+                    {{session.sessionName}}, {{'dashboard.postedAt' | translate}} {{session.added | date:"dd/MM/yyyy, HH:mm:ss"}}
+                  </td>
+                </tr>
+                <tr ng-show="sessions.length === 0 && sessionsLoaded">
+                  <td>
+                    <span>{{'dashboard.noSendedTalks' | translate}}</span>
+                  </td>
+                </tr>
+                <tr ng-show="!sessionsLoaded">
+                  <td>
+                    <span class="loading mdi-navigation-refresh glyphicon-refresh-animate" aria-hidden="true"></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <img style="max-width: 100%;margin: 0 auto;display: block;" ng-show="konamiCode" src="/images/pacman.gif" alt="pacman">
+        </div>
+      </div>
+      <div ng-if="!isVerified">
+        <div class="row">
+          <div class="center-form panel col-md-6 col-md-offset-3">
+            <div class="panel-body">
+              <h2 class="text-center">{{'dashboard.verification' | translate}}</h2>
+              <div class="alert alert-danger">{{'dashboard.verificationNeeded' | translate}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

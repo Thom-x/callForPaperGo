@@ -1,0 +1,12 @@
+{
+    "GOOGLE_SECRET" : "yourGoogleClientSecret",
+    "GITHUB_SECRET" : "yourGithubClientSecret",
+    "EMAIL_SENDER" : "senderEmail",
+    "JWT_SECRET" : "randomString",
+    "NOTIF_SERVER_KEY" : "yourGCMApiServerKey",
+    "EVENT_NAME" : "eventName",
+    "COMMUNITY" : "community",
+    "DATE" : "eventDate",
+    "RELEASE_DATE" : "talksReleaseDate",
+    "HOSTNAME" : "http://your-app-id.appspot.com"
+}
