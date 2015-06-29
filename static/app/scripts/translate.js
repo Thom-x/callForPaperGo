@@ -91,7 +91,7 @@ angular.module('CallForPaper')
         "expert": "Expert",
         "tracks": {
           "cloud": "Cloud",
-          "mobile": "Objets connectés",
+          "mobile": "Mobile et objets connectés",
           "web": "Web",
           "discovery": "Découverte"
         },
@@ -294,7 +294,7 @@ angular.module('CallForPaper')
         "expert": "Expert",
         "tracks": {
           "cloud": "Cloud",
-          "mobile": "Internet of things",
+          "mobile": "Mobile and internet of things",
           "web": "Web",
           "discovery": "Discovery"
         },
