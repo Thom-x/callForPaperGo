@@ -183,6 +183,14 @@ angular.module('CallForPaper')
 			angular.extend(model, $scope.formData.speaker);
 			angular.extend(model, $scope.formData.session);
 
+			// empty previous completed field
+			for (var key in model) {
+				if(model[key] === undefined)
+				{
+					model[key] = "";
+				}
+			}
+
 			if (id !== "") {
 				// put
 				RestrictedDraft.update({id : id}, model).$promise.then(function(success) {
