@@ -320,7 +320,7 @@ angular.module('CallForPaper')
       },
       "confirmModal": {
         "title" : "Confirmation",
-        "text" : "Do you really want to send this talk ? Once sent you will not be able to modify it.",
+        "text" : "Do you really want to submit this talk ? Once sent you will not be able to edit it.",
         "confirm" : "OK",
         "cancel" : "Cancel"
       },
