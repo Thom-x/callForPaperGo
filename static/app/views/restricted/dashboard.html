@@ -23,7 +23,10 @@
               <tbody>
                 <tr ng-repeat="draft in drafts">
                   <td>
-                    <span>{{'dashboard.draftModifiedAt' | translate}} {{draft.added | date:"dd/MM/yyyy, HH:mm:ss"}}</span>              
+                    <span>
+                      <span ng-if="draft.sessionName">{{draft.sessionName}}, {{'dashboard.modifiedAt' | translate}}</span>
+                      <span ng-if="!draft.sessionName">{{'dashboard.draftModifiedAt' | translate}}</span>{{draft.added | date:"dd/MM/yyyy, HH:mm:ss"}}
+                    </span>              
                   </td>
                   <td>
                       <a ui-sref='app.form({id: draft.id})'><span class="action glyphicon glyphicon-pencil pull-right white" aria-hidden="true"></span></a>
