@@ -91,7 +91,7 @@ angular.module('CallForPaper')
         "confirmed": "Confirmé",
         "expert": "Expert",
         "tracks": {
-          "cloud": "Cloud",
+          "cloud": "Cloud / BigData",
           "mobile": "Mobile et objets connectés",
           "web": "Web",
           "discovery": "Découverte"
@@ -295,7 +295,7 @@ angular.module('CallForPaper')
         "confirmed": "Confirmed",
         "expert": "Expert",
         "tracks": {
-          "cloud": "Cloud",
+          "cloud": "Cloud / BigData",
           "mobile": "Mobile and internet of things",
           "web": "Web",
           "discovery": "Discovery"
